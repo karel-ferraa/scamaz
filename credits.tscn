@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://b3vx5f3wmd3df"]
+
+[ext_resource type="Script" path="res://GoToMainMenu.gd" id="1_nm7lk"]
+[ext_resource type="Script" uid="uid://dphy71wo8qilt" path="res://CreditsScroll.gd" id="2_c1t8d"]
+
+[node name="Credits" type="Node2D" unique_id=938870061]
+
+[node name="Button_MainMenu" type="Button" parent="." unique_id=1102655925]
+offset_left = 25.0
+offset_top = 26.0
+offset_right = 260.0
+offset_bottom = 122.0
+text = "<== Back to Main Menu"
+script = ExtResource("1_nm7lk")
+
+[node name="Label" type="Label" parent="." unique_id=1369459811]
+offset_left = 296.0
+offset_top = -1.0
+offset_right = 914.0
+offset_bottom = 647.0
+text = "
+
+
+
+Ha Duong Valentin
+
+
+
+
+
+Chabrun Mathieu
+
+
+
+
+
+Ferraa Karel
+
+
+
+
+
+
+Le Clanche Antonin"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+script = ExtResource("2_c1t8d")
+
+[connection signal="pressed" from="Button_MainMenu" to="Button_MainMenu" method="_on_pressed"]

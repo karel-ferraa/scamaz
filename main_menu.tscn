@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://cq7nniq8was3e"]
 
-[ext_resource type="Script" uid="uid://coswt3j17oo3e" path="res://GoToTutorial.gd" id="1_06t4h"]
-[ext_resource type="Script" uid="uid://csv51nyg3ou1g" path="res://GoToMultiplayer.gd" id="2_7vrkn"]
-[ext_resource type="Script" uid="uid://b02j208u00w6l" path="res://GoToSkinSelect.gd" id="3_fu7sn"]
+[ext_resource type="Script" path="res://GoToTutorial.gd" id="1_06t4h"]
+[ext_resource type="Script" path="res://GoToMultiplayer.gd" id="2_7vrkn"]
+[ext_resource type="Script" path="res://GoToSkinSelect.gd" id="3_fu7sn"]
+[ext_resource type="Script" uid="uid://betrs3nlkbkbp" path="res://GoToCredits.gd" id="4_jix8l"]
 
 [node name="Main_Menu" type="Node2D" unique_id=165823673]
 
@@ -30,6 +31,15 @@ offset_bottom = 589.0
 text = "Skin Personnalisation"
 script = ExtResource("3_fu7sn")
 
+[node name="Button_Credits" type="Button" parent="." unique_id=865073721]
+offset_left = 920.0
+offset_top = 544.0
+offset_right = 1134.0
+offset_bottom = 627.0
+text = "Credits"
+script = ExtResource("4_jix8l")
+
 [connection signal="pressed" from="Button_Tutorial" to="Button_Tutorial" method="_on_pressed"]
 [connection signal="pressed" from="Button_Multiplayer" to="Button_Multiplayer" method="_on_pressed"]
 [connection signal="pressed" from="Button_Skin" to="Button_Skin" method="_on_pressed"]
+[connection signal="pressed" from="Button_Credits" to="Button_Credits" method="_on_pressed"]
