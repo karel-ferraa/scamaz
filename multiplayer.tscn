@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bh4blguu1ft4d"]
+
+[ext_resource type="Script" uid="uid://bbjpdblw1x4hs" path="res://GoToMainMenu.gd" id="1_o4y1c"]
+[ext_resource type="Script" uid="uid://c2r5wxtmxpkig" path="res://GoToHost.gd" id="2_5bi2t"]
+[ext_resource type="Script" uid="uid://bqxbc3h2hakmc" path="res://GoToClient.gd" id="3_wuni8"]
+
+[node name="Multiplayer" type="Node2D" unique_id=1778474967]
+
+[node name="Button_MainMenu" type="Button" parent="." unique_id=2114486310]
+offset_left = 25.0
+offset_top = 26.0
+offset_right = 260.0
+offset_bottom = 122.0
+text = "<== Back to Main Menu"
+script = ExtResource("1_o4y1c")
+
+[node name="Button_Host" type="Button" parent="." unique_id=465051885]
+offset_left = 459.0
+offset_top = 142.0
+offset_right = 697.0
+offset_bottom = 264.0
+text = "Host"
+script = ExtResource("2_5bi2t")
+
+[node name="Button_Client" type="Button" parent="." unique_id=362276016]
+offset_left = 460.0
+offset_top = 323.0
+offset_right = 698.0
+offset_bottom = 445.0
+text = "Client"
+script = ExtResource("3_wuni8")
+
+[connection signal="pressed" from="Button_MainMenu" to="Button_MainMenu" method="_on_pressed"]
+[connection signal="pressed" from="Button_Host" to="Button_Host" method="_on_pressed"]
+[connection signal="pressed" from="Button_Client" to="Button_Client" method="_on_pressed"]
