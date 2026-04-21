@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cq7nniq8was3e"]
+
+[ext_resource type="Script" uid="uid://coswt3j17oo3e" path="res://GoToTutorial.gd" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://csv51nyg3ou1g" path="res://GoToMultiplayer.gd" id="2_7vrkn"]
+[ext_resource type="Script" uid="uid://b02j208u00w6l" path="res://GoToSkinSelect.gd" id="3_fu7sn"]
+
+[node name="Main_Menu" type="Node2D" unique_id=165823673]
+
+[node name="Button_Tutorial" type="Button" parent="." unique_id=938209010]
+offset_left = 379.0
+offset_top = 47.0
+offset_right = 747.0
+offset_bottom = 195.0
+text = "Tutorial"
+script = ExtResource("1_06t4h")
+
+[node name="Button_Multiplayer" type="Button" parent="." unique_id=242037763]
+offset_left = 379.0
+offset_top = 243.0
+offset_right = 747.0
+offset_bottom = 391.0
+text = "Multiplayer"
+script = ExtResource("2_7vrkn")
+
+[node name="Button_Skin" type="Button" parent="." unique_id=358680870]
+offset_left = 379.0
+offset_top = 441.0
+offset_right = 747.0
+offset_bottom = 589.0
+text = "Skin Personnalisation"
+script = ExtResource("3_fu7sn")
+
+[connection signal="pressed" from="Button_Tutorial" to="Button_Tutorial" method="_on_pressed"]
+[connection signal="pressed" from="Button_Multiplayer" to="Button_Multiplayer" method="_on_pressed"]
+[connection signal="pressed" from="Button_Skin" to="Button_Skin" method="_on_pressed"]

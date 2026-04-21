@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://beaclklsvgcgi"]
+
+[ext_resource type="Script" uid="uid://bbjpdblw1x4hs" path="res://GoToMainMenu.gd" id="1_0wu4t"]
+
+[node name="Host" type="Node2D" unique_id=400850193]
+
+[node name="Button_MainMenu" type="Button" parent="." unique_id=1121979945]
+offset_left = 25.0
+offset_top = 26.0
+offset_right = 260.0
+offset_bottom = 122.0
+text = "<== Back to Main Menu"
+script = ExtResource("1_0wu4t")
+
+[connection signal="pressed" from="Button_MainMenu" to="Button_MainMenu" method="_on_pressed"]

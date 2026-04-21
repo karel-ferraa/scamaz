@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://tcu5xdnwshm1"]
+
+[ext_resource type="Script" uid="uid://bbjpdblw1x4hs" path="res://GoToMainMenu.gd" id="1_ji5lv"]
+[ext_resource type="Script" uid="uid://c2r5wxtmxpkig" path="res://GoToHost.gd" id="2_t1qaj"]
+
+[node name="SkinSelect" type="Node2D" unique_id=1695631371]
+
+[node name="Button_MainMenu" type="Button" parent="." unique_id=577343210]
+offset_left = 25.0
+offset_top = 26.0
+offset_right = 260.0
+offset_bottom = 122.0
+text = "<== Back to Main Menu"
+script = ExtResource("1_ji5lv")
+
+[node name="Button" type="Button" parent="." unique_id=1589332872]
+offset_left = 571.0
+offset_top = 210.0
+offset_right = 798.0
+offset_bottom = 304.0
+text = "Host"
+script = ExtResource("2_t1qaj")
+
+[connection signal="pressed" from="Button_MainMenu" to="Button_MainMenu" method="_on_pressed"]
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
