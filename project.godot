@@ -10,10 +10,14 @@ config_version=5
 
 [application]
 
-config/name="scamaz"
-run/main_scene="uid://cq7nniq8was3e"
+config/name="Trust Online"
+run/main_scene="uid://dlgv66y7l875o"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[dotnet]
+
+project/assembly_name="Trust Online"
 
 [physics]
 
