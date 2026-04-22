@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://cufbhejqac776"]
+
+[ext_resource type="Texture2D" uid="uid://dg0ih03suxxlw" path="res://Assets/peep_characters2.png" id="1_2qvjh"]
+[ext_resource type="Script" uid="uid://7c5m67q4x3fw" path="res://Scripts/joueur_2.gd" id="1_ng46d"]
+[ext_resource type="PackedScene" uid="uid://dk61o747n1tkn" path="res://Scènes/piece.tscn" id="2_pohi5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ng46d"]
+radius = 26.0
+height = 250.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pohi5"]
+atlas = ExtResource("1_2qvjh")
+region = Rect2(2100, 0, 300, 325)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ng46d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pohi5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_0ifw8"]
+script/source = "extends AnimatedSprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=296950020]
+script = ExtResource("1_ng46d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1837535803]
+position = Vector2(-2, -122)
+shape = SubResource("CapsuleShape2D_ng46d")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=160567852]
+position = Vector2(7.0000005, -158)
+rotation = 0.007224907
+sprite_frames = SubResource("SpriteFrames_ng46d")
+script = SubResource("GDScript_0ifw8")
+
+[node name="CharacterBody2D" parent="." unique_id=1543591514 instance=ExtResource("2_pohi5")]
+position = Vector2(-56, -56)
+script = null

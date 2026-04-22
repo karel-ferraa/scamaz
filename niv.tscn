@@ -1,0 +1,145 @@
+[gd_scene format=3 uid="uid://dlgv66y7l875o"]
+
+[ext_resource type="PackedScene" uid="uid://c3tcmpxrsyj6f" path="res://Scènes/Joueur.tscn" id="1_bxj3q"]
+[ext_resource type="Script" uid="uid://de7kp74v1v2wa" path="res://Scripts/niv.gd" id="1_ij6jj"]
+[ext_resource type="Texture2D" uid="uid://i20i1rlob63s" path="res://Assets/Capture d'écran 2026-04-22 100512.png" id="3_5dn21"]
+[ext_resource type="PackedScene" uid="uid://cufbhejqac776" path="res://Scènes/Joueur2.tscn" id="4_4465w"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ij6jj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bxj3q"]
+size = Vector2(1162, 152)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ij6jj"]
+size = Vector2(348, 269.5)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ij6jj"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5dn21"]
+a = Vector2(0, 1000)
+b = Vector2(0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4465w"]
+atlas = ExtResource("3_5dn21")
+region = Rect2(0, 0, 535, 400)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kg3pd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4465w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ij6jj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5dn21"]
+
+[node name="Node2D" type="Node2D" unique_id=1741372284]
+position = Vector2(0, -132)
+script = ExtResource("1_ij6jj")
+
+[node name="J1" parent="." unique_id=1252098891 instance=ExtResource("1_bxj3q")]
+position = Vector2(87, 615)
+
+[node name="J2" parent="." unique_id=296950020 instance=ExtResource("4_4465w")]
+position = Vector2(953, 627)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2037638576]
+texture_filter = 2
+material = SubResource("ShaderMaterial_ij6jj")
+position = Vector2(260, 653)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1488705622]
+position = Vector2(318, 49)
+shape = SubResource("RectangleShape2D_bxj3q")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=1877054468]
+offset_left = -264.0
+offset_top = -28.0
+offset_right = 900.0
+offset_bottom = 130.0
+color = Color(0.46618086, 0.4661808, 0.4661808, 1)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=2085838165]
+modulate = Color(0.39607844, 1, 1, 1)
+position = Vector2(566, 600)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=339258084]
+position = Vector2(16, -115)
+shape = SubResource("RectangleShape2D_ij6jj")
+debug_color = Color(6.0644747e-06, 0.69599664, 0.8129008, 0.41960785)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=480203632]
+position = Vector2(-2, -21)
+physics_material_override = SubResource("PhysicsMaterial_ij6jj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=643832764]
+shape = SubResource("SegmentShape2D_5dn21")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=1840640174]
+position = Vector2(-2, -21)
+physics_material_override = SubResource("PhysicsMaterial_ij6jj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=2119289599]
+position = Vector2(1161, 5)
+shape = SubResource("SegmentShape2D_5dn21")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D4" unique_id=1386132523]
+z_index = -2
+position = Vector2(582, 523)
+scale = Vector2(0.6242991, 0.61)
+sprite_frames = SubResource("SpriteFrames_kg3pd")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=539322305]
+z_index = 9
+offset_left = 735.0
+offset_top = 671.0
+offset_right = 950.0
+offset_bottom = 752.0
+alignment = 1
+
+[node name="Button" type="Button" parent="HBoxContainer" unique_id=969912366]
+z_index = 7
+layout_mode = 2
+text = "         Mettre une pièce         
+"
+autowrap_trim_flags = 0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1052374726]
+z_index = 6
+offset_left = 194.0
+offset_top = 666.0
+offset_right = 431.0
+offset_bottom = 750.0
+alignment = 1
+
+[node name="Button" type="Button" parent="HBoxContainer2" unique_id=1795006765]
+z_index = 8
+layout_mode = 2
+text = "     Ne pas mettre de pièce       
+"
+autowrap_trim_flags = 0
+
+[node name="Label_Score" type="Label" parent="." unique_id=1011168935]
+offset_left = 508.0
+offset_top = 160.0
+offset_right = 613.0
+offset_bottom = 183.0
+label_settings = SubResource("LabelSettings_ij6jj")
+
+[node name="Label_Résultat" type="Label" parent="." unique_id=1620043981]
+offset_left = 507.0
+offset_top = 210.0
+offset_right = 547.0
+offset_bottom = 233.0
+label_settings = SubResource("LabelSettings_5dn21")
+
+[node name="Label_Attente" type="Label" parent="." unique_id=1197746516]
+offset_left = 571.0
+offset_top = 285.0
+offset_right = 611.0
+offset_bottom = 308.0

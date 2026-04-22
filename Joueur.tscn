@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://c3tcmpxrsyj6f"]
+
+[ext_resource type="Texture2D" uid="uid://iytxna635pbg" path="res://Assets/peep_characters.png" id="1_abiuo"]
+[ext_resource type="Script" uid="uid://c10l8uboyt1iq" path="res://Scripts/joueur.gd" id="1_mpaxa"]
+[ext_resource type="PackedScene" uid="uid://dk61o747n1tkn" path="res://Scènes/piece.tscn" id="3_0w64x"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mpaxa"]
+radius = 39.47
+height = 226.24
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0w64x"]
+atlas = ExtResource("1_abiuo")
+region = Rect2(0, 0, 300, 325)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oe46j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0w64x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1252098891]
+script = ExtResource("1_mpaxa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=500752320]
+position = Vector2(4, -115)
+shape = SubResource("CapsuleShape2D_mpaxa")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1834814748]
+position = Vector2(0, -168)
+sprite_frames = SubResource("SpriteFrames_oe46j")
+
+[node name="CharacterBody2D" parent="." unique_id=1543591514 instance=ExtResource("3_0w64x")]
+position = Vector2(52, -59)

@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dk61o747n1tkn"]
+
+[ext_resource type="Texture2D" uid="uid://dspneq80hkl7v" path="res://Assets/piece-removebg-preview.png" id="1_ue1q3"]
+[ext_resource type="Script" uid="uid://dt74hmhgfjdb" path="res://Scripts/piece.gd" id="1_vw5kp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ue1q3"]
+radius = 22.62
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vw5kp"]
+atlas = ExtResource("1_ue1q3")
+region = Rect2(0, 0, 298, 169)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a74wd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vw5kp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1543591514]
+script = ExtResource("1_vw5kp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=43995821]
+shape = SubResource("CircleShape2D_ue1q3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=319827490]
+position = Vector2(-7.6293945e-06, -0.9999962)
+scale = Vector2(0.27852347, 0.27218935)
+sprite_frames = SubResource("SpriteFrames_a74wd")
