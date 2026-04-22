@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dgpgpeah3qfas"]
 
-[ext_resource type="Script" uid="uid://bbjpdblw1x4hs" path="res://GoToMainMenu.gd" id="1_yb1ct"]
+[ext_resource type="Script" path="res://GoToMainMenu.gd" id="1_yb1ct"]
 [ext_resource type="Texture2D" uid="uid://c45ilfkoibqkf" path="res://Images/Rules.png" id="2_yb1ct"]
 
 [node name="tutorial" type="Node2D" unique_id=2043776840]
@@ -22,20 +22,20 @@ offset_bottom = 515.0
 texture = ExtResource("2_yb1ct")
 expand_mode = 1
 
-[node name="TextEdit" type="TextEdit" parent="." unique_id=1676883033]
-offset_left = 653.0
-offset_top = 65.0
-offset_right = 935.0
-offset_bottom = 237.0
+[node name="Label" type="Label" parent="." unique_id=2123085649]
+offset_left = 613.0
+offset_top = 64.0
+offset_right = 917.0
+offset_bottom = 211.0
 text = "In Scamaz, your goal is to betray your friends to have the most money.
 You have 2 options, betray or cooperate, this can create 4 different situations :"
-wrap_mode = 1
+autowrap_mode = 3
 
-[node name="List of situations" type="TextEdit" parent="." unique_id=1558690527]
-offset_left = 533.0
-offset_top = 266.0
-offset_right = 1068.0
-offset_bottom = 601.0
+[node name="Label2" type="Label" parent="." unique_id=1238146308]
+offset_left = 550.0
+offset_top = 257.0
+offset_right = 1042.0
+offset_bottom = 670.0
 text = "	- You can cooperate and have the other person cooperate too, in which case you both win two coins
 
 	- You can cooperate and have the other person cheat,, in which case you lose one coin and the other player wins three coins
@@ -44,6 +44,6 @@ text = "	- You can cooperate and have the other person cooperate too, in which c
 
 	- You can cheat and have the other person cheat too, in which case you both gain or lose nothing.
 "
-wrap_mode = 1
+autowrap_mode = 3
 
 [connection signal="pressed" from="Button_MainMenu" to="Button_MainMenu" method="_on_pressed"]
